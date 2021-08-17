@@ -5,10 +5,10 @@ import {
   BrowserRouter,
   Redirect,
 } from 'react-router-dom'
-import Login from './Components/Login/Login'
-import Translation from './Components/Translation/Translation'
-import NotFound from './Components/NotFound/NotFound'
-import AppContainer from './Hoc/AppContainer';
+import Login from './components//Login'
+import Translation from './components/Translation'
+import NotFound from './components/NotFound'
+import AppContainer from './hoc/AppContainer';
 
 function App() {
   return (
