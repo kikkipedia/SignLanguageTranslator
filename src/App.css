@@ -2,7 +2,9 @@
     border: 3px solid darkcyan;
     color: white;
     padding: 10px;
+    margin: 10px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .halfSize {
@@ -11,13 +13,18 @@
     margin-left: auto;
 }
 
-.resultsContainer {
-    margin: 20px;
-    padding: 30px;
-    background-color: cornflowerblue;
-}
-
 .resultsDiv {
     background-color: white;
+    color: black;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    border: 2px solid black;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.resultsContainer {
     color: black;
 }
