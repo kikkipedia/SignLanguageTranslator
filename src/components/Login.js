@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import AppContainer from '../../hoc/AppContainer'
+import AppContainer from '../hoc/AppContainer'
 import { useHistory } from "react-router-dom";
 
 const Login = () => {
