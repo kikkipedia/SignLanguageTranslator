@@ -31,7 +31,7 @@ const Translation = () => {
         console.log("store search words: " + searchInput)
     }
 
-    //if broken img/space
+    //if broken img/white space
     const addImgError = event => {
             event.target.src="signs/blank.png"
     }
@@ -48,10 +48,9 @@ const Translation = () => {
                 <Button variant="dark" id="button-addon2" onClick={translateWord}>Translate</Button>
             </InputGroup>
             <Container className="resultsContainer halfSize">
-            <p>American sign language</p>
                 <div className="resultsDiv">               
                     {imgArray.map((letter) => (
-                        <Image src={letter} alt="sign" width="80px" onError={addImgError} />
+                        <Image src={letter} alt="sign" width="60px" onError={addImgError} />
                     ))}
                 </div> 
                                
