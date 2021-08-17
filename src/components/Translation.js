@@ -14,26 +14,26 @@ const Translation = () => {
     //translate submitted text
     const translateWord = () => {
         //save search string to database
-        saveSearh()
+        saveSearch()
         //array of char from search input
         const arr = [...searchInput]
         //empty imgArray
         setImgArray([])
         //sets img src in array
         for(let i = 0; i < arr.length; i++) {
-            if(arr[i] === ' ') {
-                setImgArray(imgArray => [...imgArray, 'signs/whiteSpace.svg'])
-            }
-            else {
-                setImgArray(imgArray => [...imgArray, 'signs/' + arr[i] + '.png'])
-            }            
+            setImgArray(imgArray => [...imgArray, 'signs/' + arr[i] + '.png'])           
         }
     }
 
     //TODO!
     //store search in database
-    const saveSearh = () => {
+    const saveSearch = () => {
         console.log("store search words: " + searchInput)
+    }
+
+    //if broken img/space
+    const addImgError = event => {
+            event.target.src="signs/blank.png"
     }
     
     return (
@@ -51,7 +51,7 @@ const Translation = () => {
             <p>American sign language</p>
                 <div className="resultsDiv">               
                     {imgArray.map((letter) => (
-                        <Image src={letter} alt="sign" width="80px" />
+                        <Image src={letter} alt="sign" width="80px" onError={addImgError} />
                     ))}
                 </div> 
                                
