@@ -1,0 +1,23 @@
+.searchForm {
+    border: 3px solid darkcyan;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.halfSize {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.resultsContainer {
+    margin: 20px;
+    padding: 30px;
+    background-color: cornflowerblue;
+}
+
+.resultsDiv {
+    background-color: white;
+    color: black;
+}
