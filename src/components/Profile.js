@@ -1,21 +1,19 @@
 import { useEffect } from "react"
 
 const Profile = () => {
+    const userId = localStorage.getItem('userId')
 
-    //fetches from api
-    // useEffect(() => {
-    //     console.log(userId)
-    //     try {
-    //         const response = fetch('http://localhost:8000/users/' + userId)
-    //         .then(response => response.json())
-    //         .then(data => console.log(data))
-    //         //CHECK IF WORKING
-    //         setSearchArray(response.search)
-    //     }
-    //     catch(err) {
-    //         console.log(err)
-    //     }
-    // }, [])
+    //fetches user from api
+    useEffect(() => {
+        try {
+            fetch('http://localhost:8000/users/' + userId)
+            .then(response => response.json())
+            .then(data => console.log(data))
+        }
+        catch(err) {
+            console.log(err)
+        }
+    },[userId])
 
     return(
         <div>

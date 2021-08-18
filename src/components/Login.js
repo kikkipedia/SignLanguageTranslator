@@ -16,25 +16,22 @@ const Login = () => {
     const handleInputChange = event => {
         setUsername(event.target.value)
     }
+
     const handleLogin = () => {
         //check for whitespace
         if (/\s/.test(username)) {
             alert("No whitespace allowed in username!")
         }
         else {
-            console.log(users)
-            for(let i = 0; i <users.length; i++) {
-                if(users[i].username === username) {
-                    localStorage.setItem('userId', users[i].id)
-                }
-                else {
-                    //post new user to database
-                    postUser()
-                }
+            let user = users.find(el => el.username === username)
+            if (user === undefined) {
+                postUser()
             }
-            //is now authenticated
-            localStorage.setItem('isAuth', true)
-            history.push('/translation')
+            else {
+                localStorage.setItem('userId', user.id)
+                localStorage.setItem('isAuth', true)
+                history.push('/translation')
+            }
         }           
     }
 
@@ -51,6 +48,8 @@ const Login = () => {
                 const id = data.id
                 //set local storage
                 localStorage.setItem('userId', id)
+                localStorage.setItem('isAuth', true)
+                history.push('/translation')
             })
         }
         catch (err) {

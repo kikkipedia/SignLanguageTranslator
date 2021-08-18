@@ -4,9 +4,18 @@ import { useEffect, useState } from 'react'
 const Translation = () => {
 
     const [userId, setUserId] = useState(localStorage.getItem('userId'))
+    const [username, setUsername] = useState()
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
     const [searchArray, setSearchArray] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:8000/users/' + userId)
+        .then(response => response.json())
+        .then(data => {
+            setUsername(data.username)
+        })
+    })
 
     //handle user input
     const handleInputChange = event => {
@@ -56,7 +65,7 @@ const Translation = () => {
     
     return (
         <div className="searchForm">
-            <h4>Welcome props.username</h4>
+            <h4>Welcome {username}</h4>
             <InputGroup className="mb-10 halfSize">
                 <FormControl
                     placeholder="Type text to translate"
