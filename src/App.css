@@ -1,6 +1,10 @@
+body {
+    font-family: sans-serif;
+}
+
 .searchForm {
     border: 3px solid darkcyan;
-    color: white;
+    color: black;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -27,4 +31,8 @@
 
 .resultsContainer {
     color: black;
+}
+
+.white {
+    color: white;
 }

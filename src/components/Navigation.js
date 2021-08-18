@@ -3,10 +3,12 @@ import { useHistory } from "react-router-dom"
 
 const Navigation = () => {
 
-    const history = useHistory();
+    const history = useHistory()
+
     const handleLogOut = () => {
         console.log("logging out")
         //set username to ''
+        //clear storage
         history.push('/')
     }
 

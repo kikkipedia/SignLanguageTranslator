@@ -1,10 +1,18 @@
 import { InputGroup, FormControl, Button, Container, Image } from 'react-bootstrap'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Translation = () => {
 
+    const [userId, setUserId] = useState()
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
+
+    //fetch from local storage
+    //TODO
+    // useEffect(() => {
+    //     const userIdFromStore = getStorage("id")
+    //     setUserId(userIdFromStore)
+    // }, [])
 
     //handle user input
     const handleInputChange = event => {
@@ -19,9 +27,9 @@ const Translation = () => {
         const arr = [...searchInput]
         //empty imgArray
         setImgArray([])
-        //sets img src in array
+        //sets img src url in the array
         for(let i = 0; i < arr.length; i++) {
-            setImgArray(imgArray => [...imgArray, 'signs/' + arr[i] + '.png'])           
+            setImgArray(imgArray => [...imgArray, 'img/' + arr[i] + '.png'])           
         }
     }
 
@@ -31,13 +39,14 @@ const Translation = () => {
         console.log("store search words: " + searchInput)
     }
 
-    //if broken img/white space
+    //since a broken img means white space
     const addImgError = event => {
-            event.target.src="signs/blank.png"
+            event.target.src="img/blank.png"
     }
     
     return (
         <div className="searchForm">
+            <h4>Welcome props.username</h4>
             <InputGroup className="mb-10 halfSize">
                 <FormControl
                     placeholder="Type text to translate"

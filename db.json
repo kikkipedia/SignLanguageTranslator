@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "kicki",
+      "search": [
+        "typicode",
+        "hej",
+        "bajs"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "stina",
+      "search": [
+        "katt",
+        "i am a cat",
+        "i am hungry"
+      ]
+    },
+    {
+      "username": "beatriz",
+      "id": 3
+    },
+    {
+      "username": "beatriz",
+      "id": 4
+    }
+  ]
+}
