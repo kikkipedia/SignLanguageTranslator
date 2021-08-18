@@ -7,13 +7,13 @@ const Translation = () => {
     const [username, setUsername] = useState()
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
-    const [searchArray, setSearchArray] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:8000/users/' + userId)
         .then(response => response.json())
         .then(data => {
             setUsername(data.username)
+            localStorage.setItem('searchArr', data.search)
         })
     })
 
