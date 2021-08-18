@@ -1,4 +1,4 @@
-import { Nav, Navbar } from "react-bootstrap"
+import { Nav, Navbar, Container } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
 const Navigation = () => {
@@ -15,13 +15,15 @@ const Navigation = () => {
     return (
         <div>
             <Navbar bg="dark" variant="dark">
+                <Container>
                 <Navbar.Brand href="/">LostInTranslation</Navbar.Brand>
-                <Nav className="me-auto">
-                    <Nav.Link href="/translation">Translate</Nav.Link>
-                    <Nav.Link href="">Profile</Nav.Link>
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
-                </Nav>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/translation">Translate</Nav.Link>
+                        <Nav.Link href="">Profile</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
+                    </Nav>
+                </Container>
             </Navbar>
         </div>
     )

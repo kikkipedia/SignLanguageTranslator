@@ -2,18 +2,22 @@ import {useState} from 'react'
 import { useHistory } from "react-router-dom";
 import { Form, Button, Row, Col } from 'react-bootstrap'
 
+
 const Login = () => {
     const [username, setUsername] = useState()
+
     const history = useHistory()
 
     const handleInputChange = event => {
         setUsername(event.target.value)
     }
-    const handleLogin = () =>{
-        //check for no spaces in username
+    const handleLogin = () => {
+        //check for no spaces in username -- TODO!
         //post to db
         postUser()
-        history.push('/translation')
+        //is now authenticated
+        localStorage.setItem('isAuth', true)
+        history.push('/translation')   
     }
 
     const postUser = () => {
@@ -25,6 +29,11 @@ const Login = () => {
         try {
             fetch('http://localhost:8000/users', requestOptions)
             .then(response => response.json())
+            .then(data => {
+                const id = data.id
+                //set local storage
+                localStorage.setItem('userId', id)
+            })
         }
         catch (err) {
             console.log("Error msg: " + err)

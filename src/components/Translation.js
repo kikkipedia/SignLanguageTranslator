@@ -1,18 +1,18 @@
 import { InputGroup, FormControl, Button, Container, Image } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Translation = () => {
 
-    const [userId, setUserId] = useState()
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
+    // TODO save searches array!
+    const history = useHistory()
 
-    //fetch from local storage
-    //TODO
-    // useEffect(() => {
-    //     const userIdFromStore = getStorage("id")
-    //     setUserId(userIdFromStore)
-    // }, [])
+    //fetches from local storage
+    useEffect(() => {
+        
+    }, [])
 
     //handle user input
     const handleInputChange = event => {
