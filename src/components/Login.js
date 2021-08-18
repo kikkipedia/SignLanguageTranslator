@@ -1,30 +1,48 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { useHistory } from "react-router-dom";
 import { Form, Button, Row, Col } from 'react-bootstrap'
 
-
 const Login = () => {
     const [username, setUsername] = useState()
-
+    const [users, setUsers] = useState([])
     const history = useHistory()
+
+   useEffect(() => {
+        fetch("http://localhost:8000/users")
+        .then(response => response.json())
+        .then(data => setUsers(data))        
+    },[])
 
     const handleInputChange = event => {
         setUsername(event.target.value)
     }
     const handleLogin = () => {
-        //check for no spaces in username -- TODO!
-        //post to db
-        postUser()
-        //is now authenticated
-        localStorage.setItem('isAuth', true)
-        history.push('/translation')   
+        //check for whitespace
+        if (/\s/.test(username)) {
+            alert("No whitespace allowed in username!")
+        }
+        else {
+            console.log(users)
+            for(let i = 0; i <users.length; i++) {
+                if(users[i].username === username) {
+                    localStorage.setItem('userId', users[i].id)
+                }
+                else {
+                    //post new user to database
+                    postUser()
+                }
+            }
+            //is now authenticated
+            localStorage.setItem('isAuth', true)
+            history.push('/translation')
+        }           
     }
 
     const postUser = () => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: username })
+            body: JSON.stringify({ username: username, search: [] })
         }
         try {
             fetch('http://localhost:8000/users', requestOptions)

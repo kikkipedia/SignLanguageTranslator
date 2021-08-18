@@ -1,18 +1,12 @@
 import { InputGroup, FormControl, Button, Container, Image } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
 
 const Translation = () => {
 
+    const [userId, setUserId] = useState(localStorage.getItem('userId'))
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
-    // TODO save searches array!
-    const history = useHistory()
-
-    //fetches from local storage
-    useEffect(() => {
-        
-    }, [])
+    const [searchArray, setSearchArray] = useState([])
 
     //handle user input
     const handleInputChange = event => {
@@ -37,6 +31,22 @@ const Translation = () => {
     //store search in database
     const saveSearch = () => {
         console.log("store search words: " + searchInput)
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ search: searchInput })
+        }
+        try {
+            fetch('http://localhost:8000/users/' + userId, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+        }
+        catch (err) {
+            console.log("Error msg: " + err)
+        }      
+
     }
 
     //since a broken img means white space
