@@ -6,9 +6,7 @@ const Navigation = () => {
     const history = useHistory()
 
     const handleLogOut = () => {
-        console.log("logging out")
-        //set username to ''
-        //clear storage
+        localStorage.clear()
         history.push('/')
     }
 
@@ -20,8 +18,7 @@ const Navigation = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="/translation">Translate</Nav.Link>
                         <Nav.Link href="/profile">Profile</Nav.Link>
-                        <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
+                        <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>                  
                     </Nav>
                 </Container>
             </Navbar>

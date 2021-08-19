@@ -6,7 +6,16 @@
       "search": [
         "typicode",
         "hej",
-        "bajs"
+        "bajs",
+        "jaja",
+        "hej",
+        "såja",
+        "nej",
+        "vafan",
+        "sjukt",
+        "ja",
+        "nej",
+        "mama"
       ]
     },
     {
@@ -19,9 +28,14 @@
       ]
     },
     {
-      "username": "helvete",
+      "username": "helenaNew",
       "search": [],
-      "id": 3
+      "id": 4
+    },
+    {
+      "username": "newUser",
+      "search": [],
+      "id": 5
     }
   ]
 }

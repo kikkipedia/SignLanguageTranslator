@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { useHistory } from "react-router-dom";
 import { Form, Button, Row, Col } from 'react-bootstrap'
+import { fetchUsers, postUser } from '../api';
 
 const Login = () => {
     const [username, setUsername] = useState()
@@ -8,8 +9,7 @@ const Login = () => {
     const history = useHistory()
 
    useEffect(() => {
-        fetch("http://localhost:8000/users")
-        .then(response => response.json())
+        fetchUsers()
         .then(data => setUsers(data))        
     },[])
 
@@ -23,32 +23,30 @@ const Login = () => {
             alert("No whitespace allowed in username!")
         }
         else {
+            //checks if user already exists in database
+            //if not - post to database
             let user = users.find(el => el.username === username)
             if (user === undefined) {
-                postUser()
+                posttoDatabase()
             }
             else {
                 localStorage.setItem('userId', user.id)
                 localStorage.setItem('isAuth', true)
+                localStorage.setItem('username', user.username)
                 history.push('/translation')
             }
         }           
     }
 
-    const postUser = () => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: username, search: [] })
-        }
+    const posttoDatabase = () => {        
         try {
-            fetch('http://localhost:8000/users', requestOptions)
-            .then(response => response.json())
+            postUser(username)
             .then(data => {
                 const id = data.id
                 //set local storage
                 localStorage.setItem('userId', id)
                 localStorage.setItem('isAuth', true)
+                localStorage.setItem('username', username)
                 history.push('/translation')
             })
         }
@@ -56,8 +54,7 @@ const Login = () => {
             console.log("Error msg: " + err)
         }      
     }
-    
-    
+        
     return (
         <div className="searchForm">
             <Form className="mt-3 halfSize">

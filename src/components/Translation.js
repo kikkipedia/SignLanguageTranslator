@@ -7,6 +7,7 @@ const Translation = () => {
     const [username, setUsername] = useState()
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
+    const [searchArr, setSearchArr] = useState(localStorage.getItem('searchArr'))
 
     useEffect(() => {
         fetch('http://localhost:8000/users/' + userId)
@@ -36,26 +37,14 @@ const Translation = () => {
         }
     }
 
-    //TODO!
-    //store search in database
+    //TODO! not working
+    //store search in database search array
     const saveSearch = () => {
-        console.log("store search words: " + searchInput)
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ search: searchInput })
-        }
-        try {
-            fetch('http://localhost:8000/users/' + userId, requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-        }
-        catch (err) {
-            console.log("Error msg: " + err)
-        }      
-
+        const updateSearch = [
+            ...searchArr,
+            searchInput
+        ]
+        setSearchArr(updateSearch)
     }
 
     //since a broken img means white space
