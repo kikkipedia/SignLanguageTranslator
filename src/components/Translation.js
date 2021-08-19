@@ -1,4 +1,5 @@
 import { InputGroup, FormControl, Button, Container, Image } from 'react-bootstrap'
+import { Redirect } from 'react-router'
 import { useState } from 'react'
 import { postSearch } from '../api'
 import { getStorage } from '../storage'

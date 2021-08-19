@@ -29,12 +29,14 @@ const Login = () => {
             let user = users.find(el => el.username === username)
             if (user === undefined) {
                 posttoDatabase()
+                setStorage('auth', true)
             }
             else {
                 //set local storage
                 setStorage('userId', user.id)
                 setStorage('isAuth', true)
                 setStorage('username', user.username)
+                setStorage('auth', true)
                 history.push('/translation')
             }
         }           
