@@ -1,22 +1,16 @@
 import { InputGroup, FormControl, Button, Container, Image } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { postSearch } from '../api'
+import { getStorage } from '../storage'
 
 const Translation = () => {
 
-    const [userId, setUserId] = useState(localStorage.getItem('userId'))
-    const [username, setUsername] = useState()
+    const [user, setUser] = useState({
+        userId: getStorage('userId'),
+        username: getStorage('username')
+    })
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
-    const [searchArr, setSearchArr] = useState(localStorage.getItem('searchArr'))
-
-    useEffect(() => {
-        fetch('http://localhost:8000/users/' + userId)
-        .then(response => response.json())
-        .then(data => {
-            setUsername(data.username)
-            localStorage.setItem('searchArr', data.search)
-        })
-    })
 
     //handle user input
     const handleInputChange = event => {
@@ -25,27 +19,40 @@ const Translation = () => {
 
     //translate submitted text
     const translateWord = () => {
-        //save search string to database
-        saveSearch()
-        //array of char from search input
+        //creates array of char from search input
         const arr = [...searchInput]
-        //empty imgArray
+        //empty imgArray for next search
         setImgArray([])
         //sets img src url in the array
         for(let i = 0; i < arr.length; i++) {
             setImgArray(imgArray => [...imgArray, 'img/' + arr[i] + '.png'])           
         }
+        //save search string to database
+        saveSearch()
     }
 
-    //TODO! not working
-    //store search in database search array
+    //store search in database
     const saveSearch = () => {
-        const updateSearch = [
-            ...searchArr,
-            searchInput
-        ]
-        setSearchArr(updateSearch)
+        postSearch(user.username, searchInput)
     }
+    
+
+    // const postSearch = (searchArr) => {
+    //     console.log("in api/index.js: " + searchArr)
+    //     const requestOptions = {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({ search: searchArr })
+    //     }
+    //     try {
+    //         fetch('http://localhost:8000/users/' + user.userId, requestOptions)
+    //             .then(response => response.json())
+    //     }
+    //     catch(err) {
+    //         console.log("Error msg: " + err)
+    //     }
+        
+    // }
 
     //since a broken img means white space
     const addImgError = event => {
@@ -54,7 +61,7 @@ const Translation = () => {
     
     return (
         <div className="searchForm">
-            <h4>Welcome {username}</h4>
+            <h4>Welcome {user.username}</h4>
             <InputGroup className="mb-10 halfSize">
                 <FormControl
                     placeholder="Type text to translate"

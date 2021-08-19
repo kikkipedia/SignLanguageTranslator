@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react"
 import { Button } from "react-bootstrap"
+import { fetchUser } from "../api"
 
 const Profile = () => {
+    const [user, setUser] = useState()
     const [searchArray, setSearchArray] = useState([])
     const userId = localStorage.getItem('userId')
 
-    //TODO -- Fetch only last 10
      //fetches user from api
      useEffect(() => {
         try {
-            fetch('http://localhost:8000/users/' + userId)
-            .then(response => response.json())
+            fetchUser(userId)
             .then(data => {
+                setUser(data)
                 const arr = data.search
                 setSearchArray(arr)
             })
@@ -19,7 +20,7 @@ const Profile = () => {
         catch(err) {
             console.log("Error msg: " + err)
         }
-    })
+    },[userId])
 
     //clear search in database
     //TODO
@@ -27,13 +28,16 @@ const Profile = () => {
 
     }
 
+    //TODO -- Show only last 10 searches
+
+    //TODO -- If search = null
     return(
         <div className="mt-3">
             <h4>Most recent translations:</h4>
-            {searchArray.map((search) => (
+            {/* {searchArray.map((search) => (
                 <li>{search}</li>
             ))}
-            <Button onClick={clearSearch}>Clear history</Button>
+            <Button onClick={clearSearch}>Clear search history</Button> */}
         </div>
     )
 }

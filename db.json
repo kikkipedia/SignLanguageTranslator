@@ -1,41 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "kicki",
-      "search": [
-        "typicode",
-        "hej",
-        "bajs",
-        "jaja",
-        "hej",
-        "såja",
-        "nej",
-        "vafan",
-        "sjukt",
-        "ja",
-        "nej",
-        "mama"
-      ]
-    },
-    {
       "id": 2,
+      "username": "stina"
+    }
+  ],
+  "search": [
+    {
+      "id": 1,
       "username": "stina",
-      "search": [
-        "katt",
-        "i am a cat",
-        "i am hungry"
-      ]
+      "text": "i am a cat"
     },
     {
-      "username": "helenaNew",
-      "search": [],
-      "id": 4
-    },
-    {
-      "username": "newUser",
-      "search": [],
-      "id": 5
+      "username": "stina",
+      "text": "more sleep",
+      "id": 2
     }
   ]
 }
