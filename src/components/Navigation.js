@@ -1,5 +1,5 @@
 import { Nav, Navbar, Container } from "react-bootstrap"
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router"
 
 const Navigation = () => {
 
@@ -7,7 +7,7 @@ const Navigation = () => {
 
     const handleLogOut = () => {
         localStorage.clear()
-        history.push('/')
+        history.push("/")
     }
 
     return (

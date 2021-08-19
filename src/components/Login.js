@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react'
 import { useHistory } from "react-router-dom";
 import { Form, Button, Row, Col } from 'react-bootstrap'
-import { fetchUsers, postUser } from '../api';
-import { setStorage } from '../storage';
+import { fetchUsers, postUser } from '../api'
+import { setStorage } from '../storage'
 
 const Login = () => {
     const [username, setUsername] = useState()
@@ -34,7 +34,6 @@ const Login = () => {
             else {
                 //set local storage
                 setStorage('userId', user.id)
-                setStorage('isAuth', true)
                 setStorage('username', user.username)
                 setStorage('auth', true)
                 history.push('/translation')
@@ -49,7 +48,7 @@ const Login = () => {
                 const id = data.id
                 //set local storage
                 setStorage('userId', id)
-                setStorage('isAuth', true)
+                setStorage('auth', true)
                 setStorage('username', username)
                 history.push('/translation')
             })

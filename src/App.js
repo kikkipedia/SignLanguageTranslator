@@ -1,6 +1,5 @@
 import './App.css'
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom'
-import { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Login from './components//Login'
 import Translation from './components/Translation'
@@ -22,7 +21,7 @@ function App() {
           <Route exact path="/">
             {isAuth ? <Redirect to="/translation" /> : <Login />}
           </Route>
-          <Route path="/translation" component={Translation} />
+          <Route path="/translation" component={Translation}/>
           <Route path="/profile" component={Profile}/>
           <Route path="*" component={ NotFound }/>
         </Switch>
@@ -33,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

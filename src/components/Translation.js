@@ -1,6 +1,6 @@
 import { InputGroup, FormControl, Button, Container, Image } from 'react-bootstrap'
 import { Redirect } from 'react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { postSearch } from '../api'
 import { getStorage } from '../storage'
 
@@ -12,6 +12,13 @@ const Translation = () => {
     })
     const [searchInput, setSearchInput] = useState()
     const [imgArray, setImgArray] = useState([])
+
+    //check if logged in
+    useEffect(() => {
+        if(!user.username || user.username === '') {
+            <Redirect to="/login"></Redirect>
+        }
+    },[user.username])
 
     //handle user input
     const handleInputChange = event => {
