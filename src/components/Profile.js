@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { Button, Table, Row, Col } from "react-bootstrap"
 import { fetchSearches } from "../api"
 import { getStorage } from "../storage"
-import { deleteSearch } from "../api"
 
 const Profile = () => {
     const username = getStorage('username')
@@ -34,43 +33,21 @@ const Profile = () => {
         <div className="mt-3">
             <h4>Most recent translations:</h4>
             <Table>
-                {searchArr.map((search) => {
+                {searchArr.slice(-10).map((search) => {
                     if (search.username === username) {
                     return(
                         <Row key={search.id}>
                             <Col>
-                                <p>{search.text}</p>
+                                <Button size="sm" onClick={() => deleteSearch(search.id)}>Delete</Button>
                             </Col>
                             <Col>
-                                <Button size="sm" variant="secondary" onClick={() => deleteSearch(search.id)}>Delete</Button>
+                                <p>{search.text}</p>
                             </Col>
                         </Row>
                     )
                     }
                 })}
             </Table>
-            
-
-            {/* <Row>
-                <Col>
-                    {searchArr.map((search, index) => {
-                        if (search.username === username) {
-                            return (<p key={'Key-'+index}>
-                                {search.text}
-                                </p>
-                            )}
-                    }
-                    )}
-                </Col>
-                <Col>
-                    {searchArr.map((search, index) => {
-                        if (search.username === username) {
-                            return (<p><Button value={search.id}>Delete</Button></p>
-                            )}
-                    }
-                    )} 
-                </Col>
-            </Row> */}
         </div>
     )
 }

@@ -35,24 +35,6 @@ const Translation = () => {
     const saveSearch = () => {
         postSearch(user.username, searchInput)
     }
-    
-
-    // const postSearch = (searchArr) => {
-    //     console.log("in api/index.js: " + searchArr)
-    //     const requestOptions = {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ search: searchArr })
-    //     }
-    //     try {
-    //         fetch('http://localhost:8000/users/' + user.userId, requestOptions)
-    //             .then(response => response.json())
-    //     }
-    //     catch(err) {
-    //         console.log("Error msg: " + err)
-    //     }
-        
-    // }
 
     //since a broken img means white space
     const addImgError = event => {
