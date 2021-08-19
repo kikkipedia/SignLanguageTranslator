@@ -31,3 +31,8 @@ export function postSearch(username, searchInput) {
     return fetch('http://localhost:8000/search/', requestOptions)
         .then(response => response.json())
 }
+
+export function fetchSearches() {
+    return fetch('http://localhost:8000/search/')
+        .then(response => response.json())
+}

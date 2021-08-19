@@ -3,6 +3,11 @@
     {
       "id": 2,
       "username": "stina"
+    },
+    {
+      "username": "kicki",
+      "search": [],
+      "id": 3
     }
   ],
   "search": [
@@ -15,6 +20,26 @@
       "username": "stina",
       "text": "more sleep",
       "id": 2
+    },
+    {
+      "username": "stina",
+      "text": "kissekatt",
+      "id": 3
+    },
+    {
+      "username": "kicki",
+      "text": "hello",
+      "id": 4
+    },
+    {
+      "username": "kicki",
+      "text": "sign language is cool",
+      "id": 5
+    },
+    {
+      "username": "kicki",
+      "text": "i am learning",
+      "id": 6
     }
   ]
 }
