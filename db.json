@@ -6,40 +6,19 @@
     },
     {
       "username": "kicki",
-      "search": [],
       "id": 3
+    },
+    {
+      "username": "kciki",
+      "search": [],
+      "id": 4
     }
   ],
   "search": [
     {
-      "id": 1,
-      "username": "stina",
-      "text": "i am a cat"
-    },
-    {
-      "username": "stina",
-      "text": "more sleep",
-      "id": 2
-    },
-    {
-      "username": "stina",
-      "text": "kissekatt",
+      "username": "kciki",
+      "text": "lol",
       "id": 3
-    },
-    {
-      "username": "kicki",
-      "text": "hello",
-      "id": 4
-    },
-    {
-      "username": "kicki",
-      "text": "sign language is cool",
-      "id": 5
-    },
-    {
-      "username": "kicki",
-      "text": "i am learning",
-      "id": 6
     }
   ]
 }

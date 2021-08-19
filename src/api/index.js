@@ -1,6 +1,4 @@
-//API functionality
-
-import { getStorage } from "../storage"
+//API calls
 
 export function fetchUsers() {
 	return fetch("http://localhost:8000/users")
