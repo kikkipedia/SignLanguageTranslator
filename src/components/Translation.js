@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { postSearch } from '../api'
 import { getStorage } from '../storage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignLanguage } from '@fortawesome/free-solid-svg-icons'
 
 const Translation = () => {
 
@@ -63,7 +63,7 @@ const Translation = () => {
                     onChange={handleInputChange}
                     value={searchInput}
                 />
-                <Button variant="dark" id="button-addon2" onClick={translateWord}><FontAwesomeIcon icon={faSignInAlt}/></Button>
+                <Button variant="dark" id="button-addon2" onClick={translateWord}><FontAwesomeIcon icon={faSignLanguage}/></Button>
             </InputGroup>
             <Container className="resultsContainer halfSize">
                 <div className="resultsDiv">               
