@@ -13,13 +13,20 @@ const Navigation = () => {
     return (
         <div>
             <Navbar bg="dark" variant="dark">
-                <Container>
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                
                 <Navbar.Brand href="/">LostInTranslation</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/">Translate</Nav.Link>
                         <Nav.Link href="/profile">Profile</Nav.Link>
-                        <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>                  
-                    </Nav>
+                        </Nav>
+                        <Nav className="ml-auto">
+                            <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
+                        </Nav>                  
+                
+                </Navbar.Collapse>
                 </Container>
             </Navbar>
         </div>

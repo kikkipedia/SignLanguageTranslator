@@ -5,14 +5,14 @@ body {
 .searchForm {
     border: 3px solid darkcyan;
     color: black;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     text-align: center;
     border-radius: 10px;
 }
 
 .halfSize {
-    width: 65%;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -36,3 +36,18 @@ body {
 .white {
     color: white;
 }
+
+.btn-icon {
+    background-color: white;
+    border: none;
+    color: red;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .left {
+      text-align: left;
+  }

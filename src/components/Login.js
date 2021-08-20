@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { fetchUsers, postUser } from '../api'
 import { setStorage } from '../storage'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
     const [username, setUsername] = useState()
@@ -60,18 +62,18 @@ const Login = () => {
         
     return (
         <div className="searchForm">
-            <Form className="mt-3 halfSize">
-                <Row className="align-items-center">
+            <Form className="halfSize">
+                <Row>
                     <h4>Login to use the translator</h4>
                 </Row>
                 <Row>
-                    <Col className="md-10">
+                    <Col>
                         <Form.Group className="mt-3">
                             <Form.Control type="text" placeholder="Enter username" onChange={handleInputChange} />
                         </Form.Group>
                     </Col>
-                    <Col className="md-2">
-                        <Button className="mt-3" variant="primary" onClick={handleLogin}>Login</Button>
+                    <Col md="auto">
+                        <Button variant="black" className="mt-3" onClick={handleLogin}><FontAwesomeIcon icon={faSignInAlt}/></Button>
                     </Col>                
                 </Row>
             </Form>

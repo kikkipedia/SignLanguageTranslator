@@ -3,6 +3,8 @@ import { Redirect } from 'react-router'
 import { useEffect, useState } from 'react'
 import { postSearch } from '../api'
 import { getStorage } from '../storage'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Translation = () => {
 
@@ -10,7 +12,7 @@ const Translation = () => {
         userId: getStorage('userId'),
         username: getStorage('username')
     })
-    const [searchInput, setSearchInput] = useState()
+    const [searchInput, setSearchInput] = useState('')
     const [imgArray, setImgArray] = useState([])
 
     //check if logged in
@@ -52,7 +54,7 @@ const Translation = () => {
     
     return (
         <div className="searchForm">
-            <h4>Welcome {user.username}</h4>
+            <h4>Welcome {user.username}!</h4>
             <InputGroup className="mb-10 halfSize">
                 <FormControl
                     placeholder="Type text to translate"
@@ -61,12 +63,12 @@ const Translation = () => {
                     onChange={handleInputChange}
                     value={searchInput}
                 />
-                <Button variant="dark" id="button-addon2" onClick={translateWord}>Translate</Button>
+                <Button variant="dark" id="button-addon2" onClick={translateWord}><FontAwesomeIcon icon={faSignInAlt}/></Button>
             </InputGroup>
             <Container className="resultsContainer halfSize">
                 <div className="resultsDiv">               
                     {imgArray.map((letter) => (
-                        <Image src={letter} alt="sign" width="60px" onError={addImgError} />
+                        <Image src={letter} alt="sign" width="50px" onError={addImgError} />
                     ))}
                 </div> 
                                

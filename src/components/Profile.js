@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from "react"
-import { Button, Table, Row, Col } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import { fetchSearches } from "../api"
 import { getStorage } from "../storage"
 
@@ -27,24 +29,18 @@ const Profile = () => {
     }
 
     return(
-        <div className="mt-3">
-            <h4>Most recent translations:</h4>
-            <Table>
+        <div className="mt-3 searchForm left">
+            <h4>Your recent translations:</h4>
+            <br/>
                 {searchArr.slice(-10).map((search) => {
                     if (search.username === username) {
                     return(
                         <Row key={search.id}>
-                            <Col>
-                                <Button size="sm" onClick={() => deleteSearch(search.id)}>Delete</Button>
-                            </Col>
-                            <Col>
-                                <p>{search.text}</p>
-                            </Col>
+                                <p><button className="btn-icon" size="sm" onClick={() => deleteSearch(search.id)}><FontAwesomeIcon icon={faTrashAlt}/></button>{search.text}</p>
                         </Row>
                     )
                     }
                 })}
-            </Table>
         </div>
     )
 }
