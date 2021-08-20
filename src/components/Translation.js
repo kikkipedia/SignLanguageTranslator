@@ -54,7 +54,7 @@ const Translation = () => {
     
     return (
         <div className="searchForm">
-            <h4>Welcome {user.username}!</h4>
+            <h2 className="animate__animated animate__fadeInRightBig">Welcome {user.username}!</h2>
             <InputGroup className="mb-10 halfSize">
                 <FormControl
                     placeholder="Type text to translate"
@@ -63,7 +63,7 @@ const Translation = () => {
                     onChange={handleInputChange}
                     value={searchInput}
                 />
-                <Button variant="dark" id="button-addon2" onClick={translateWord}><FontAwesomeIcon icon={faSignLanguage}/></Button>
+                <button className="btn-icon-big" id="button-addon2" onClick={translateWord}><FontAwesomeIcon icon={faSignLanguage}/></button>
             </InputGroup>
             <Container className="resultsContainer halfSize">
                 <div className="resultsDiv">               

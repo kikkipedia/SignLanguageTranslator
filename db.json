@@ -79,6 +79,16 @@
       "username": "stina",
       "text": "hello ",
       "id": 35
+    },
+    {
+      "username": "kicki",
+      "text": "helloworld",
+      "id": 36
+    },
+    {
+      "username": "kicki",
+      "text": "kicki",
+      "id": 37
     }
   ]
 }

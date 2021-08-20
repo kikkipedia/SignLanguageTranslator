@@ -30,7 +30,7 @@ const Profile = () => {
 
     return(
         <div className="mt-3 searchForm left">
-            <h4>Your recent translations:</h4>
+            <h2>Recent translations:</h2>
             <br/>
                 {searchArr.slice(-10).map((search) => {
                     if (search.username === username) {

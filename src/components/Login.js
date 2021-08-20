@@ -5,6 +5,7 @@ import { fetchUsers, postUser } from '../api'
 import { setStorage } from '../storage'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import "animate.css"
 
 const Login = () => {
     const [username, setUsername] = useState()
@@ -64,7 +65,8 @@ const Login = () => {
         <div className="searchForm">
             <Form className="halfSize">
                 <Row>
-                    <h4>Login to use the translator</h4>
+                    <h2 className="animate__animated animate__backInDown">WELCOME</h2>
+                    <p className="smallText">Please login to use the translator</p>
                 </Row>
                 <Row>
                     <Col>
@@ -73,7 +75,7 @@ const Login = () => {
                         </Form.Group>
                     </Col>
                     <Col md="auto">
-                        <Button variant="black" className="mt-3" onClick={handleLogin}><FontAwesomeIcon icon={faSignInAlt}/></Button>
+                        <button  className="mt-3 btn-icon-big" onClick={handleLogin}><FontAwesomeIcon icon={faSignInAlt}/></button>
                     </Col>                
                 </Row>
             </Form>
