@@ -1,9 +1,16 @@
+# Sign Language Translator
+
+Single page sign language translator built with React. Translates regular text to American sign language. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and uses [Json-server](https://github.com/typicode/json-server) as a mock database backend
 
 ## Available Scripts
 
-To run json-server:
+To install json-server:
+### `npm install -g json-server`
+
+To run json-server locally:
 ### `json-server --watch db.json --port 8000`
 
 In the project directory, you can run:

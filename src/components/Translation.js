@@ -42,6 +42,7 @@ const Translation = () => {
     //store search in database
     const saveSearch = () => {
         postSearch(user.username, searchInput)
+        setSearchInput('')
     }
 
     //since a broken img means white space
@@ -58,6 +59,7 @@ const Translation = () => {
                     aria-label="Translate"
                     aria-describedby="basic-addon2"
                     onChange={handleInputChange}
+                    value={searchInput}
                 />
                 <Button variant="dark" id="button-addon2" onClick={translateWord}>Translate</Button>
             </InputGroup>
