@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { Button, Table, Row, Col } from "react-bootstrap"
-import { Redirect } from "react-router"
 import { fetchSearches } from "../api"
 import { getStorage } from "../storage"
 
@@ -19,13 +18,6 @@ const Profile = () => {
         }
     },[searchArr]) 
 
-    //check if logged in
-    useEffect(() => {
-        if(!username || username === '') {
-            <Redirect to="/login"></Redirect>
-        }
-    },[username])
-
     //delete search in database
     const deleteSearch = (searchId) => {
         const requestOptions = {
@@ -33,8 +25,6 @@ const Profile = () => {
         }
         fetch('http://localhost:8000/search/' + searchId, requestOptions)
     }
-
-    //TODO -- Show only last 10 searches
 
     return(
         <div className="mt-3">

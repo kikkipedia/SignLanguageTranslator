@@ -36,7 +36,7 @@ const Login = () => {
                 setStorage('userId', user.id)
                 setStorage('username', user.username)
                 setStorage('auth', true)
-                history.push('/translation')
+                history.push('/')
             }
         }           
     }
@@ -50,7 +50,7 @@ const Login = () => {
                 setStorage('userId', id)
                 setStorage('auth', true)
                 setStorage('username', username)
-                history.push('/translation')
+                history.push('/')
             })
         }
         catch (err) {

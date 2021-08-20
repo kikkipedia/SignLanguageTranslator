@@ -16,7 +16,7 @@ const Navigation = () => {
                 <Container>
                 <Navbar.Brand href="/">LostInTranslation</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/translation">Translate</Nav.Link>
+                        <Nav.Link href="/">Translate</Nav.Link>
                         <Nav.Link href="/profile">Profile</Nav.Link>
                         <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>                  
                     </Nav>
