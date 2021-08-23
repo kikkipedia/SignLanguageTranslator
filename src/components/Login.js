@@ -26,6 +26,9 @@ const Login = () => {
         if (/\s/.test(username)) {
             alert("No whitespace allowed in username!")
         }
+        else if (!username || username === '') {
+            alert("Enter a valid username")
+        }
         else {
             //checks if user already exists in database
             //if not - post to database
