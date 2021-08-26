@@ -8,7 +8,7 @@ and uses [Json-server](https://github.com/typicode/json-server) as a mock databa
 
 ### Try the app here: [https://signtranslator.herokuapp.com/](https://signtranslator.herokuapp.com/)
 
-## Available Scripts
+### Available Scripts
 
 To install json-server:
 ### `npm install -g json-server`
