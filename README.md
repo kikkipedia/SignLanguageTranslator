@@ -1,5 +1,7 @@
 # Sign Language Translator
 
+## :wave: :ok_hand: :pinching_hand: 	:call_me_hand:
+
 Single page sign language translator built with React. Translates regular text to American sign language. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
