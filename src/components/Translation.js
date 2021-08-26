@@ -8,7 +8,7 @@ import { faSignLanguage } from '@fortawesome/free-solid-svg-icons'
 
 const Translation = () => {
 
-    const [user, setUser] = useState({
+    const user = useState({
         userId: getStorage('userId'),
         username: getStorage('username')
     })

@@ -16,8 +16,9 @@ function App() {
       <Navigation/>
       <Container>
         <Switch>
-          <Route path="/login" component={Login}/>
-          <PrivateRoute exact path="/" component={Translation}/>
+          <Route path="/login" component={Login}/>         
+          <Route path="/" exact component={Login}/>
+          <PrivateRoute path="/translate" component={Translation}/>
           <PrivateRoute path="/profile" component={Profile}/>
           <Route path="*" component={ NotFound }/>
         </Switch>
