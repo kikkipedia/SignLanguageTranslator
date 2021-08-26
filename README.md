@@ -1,4 +1,4 @@
-# :love_you_gesture: :ok_hand: :v: Sign Language Translator :wave: :ok_hand: :pinching_hand: :call_me_hand:
+# :wave: :love_you_gesture: :ok_hand: :v: Sign Language Translator :wave: :ok_hand: :pinching_hand: :call_me_hand:
 
 
 Single page sign language translator built with React. Translates regular text to American sign language. 
