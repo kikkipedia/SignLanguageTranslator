@@ -6,8 +6,6 @@ Single page sign language translator built with React. Translates regular text t
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and uses [Json-server](https://github.com/typicode/json-server) as a mock database backend
 
-### Try the app here: [https://signtranslator.herokuapp.com/](https://signtranslator.herokuapp.com/)
-
 ### Available Scripts
 
 To install json-server:
